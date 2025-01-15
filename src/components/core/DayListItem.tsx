@@ -23,5 +23,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  text: { color: "#9b4521", fontSize: 70 },
+  text: { color: "#9b4521", fontSize: 70, fontFamily: "AmaticSC_700Bold" },
 });
