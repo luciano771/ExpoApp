@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 const index = () => {
   return (
     <View>
-      <Text>about</Text>
+      <Text>Day 2</Text>
     </View>
   );
 };
