@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import DayListItem from "./src/components/core/DayListItem";
+import DayListItem from "../../src/components/core/DayListItem";
 import { StatusBar } from "expo-status-bar";
 import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
 import { Inter_900Black, useFonts } from "@expo-google-fonts/inter";
@@ -15,7 +15,7 @@ SplashScreen.preventAutoHideAsync();
 
 const days = [...Array(24)].map((val, index) => index + 1);
 
-export default function App() {
+export default function HomeScreen() {
   let [fontsLoaded, fontError] = useFonts({
     Inter_900Black,
     AmaticSC_700Bold,

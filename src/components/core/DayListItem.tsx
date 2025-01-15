@@ -1,4 +1,5 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
 
 type DayListItem = {
   day: number;
@@ -8,6 +9,7 @@ export default function DayListItem({ day }: DayListItem) {
   return (
     <View style={styles.box}>
       <Text style={styles.text}>{day}</Text>
+      <Link href={"user/followers"}>go to followers</Link>
     </View>
   );
 }
