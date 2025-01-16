@@ -1,32 +1,58 @@
-import { Link, Stack } from "expo-router";
+import { Link, router, Stack } from "expo-router";
 import { SafeAreaView, Text, View, Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { useState } from "react";
+
+const OnBoardingSteps = [
+  {
+    icons: "snowflake",
+    title: "Track every transaction",
+    description:
+      "Monitor your spending in the daily and make sure you optimize your finance",
+  },
+  {
+    icons: "people-arrows",
+    title: "you dont know how to start?",
+    description:
+      "  We have a big team ready to help you to find the most fast way to show you how can you optimize your finance!",
+  },
+  { icons: "question", title: "aaaaa", description: "aaaaa" },
+];
+
 export default function onboarding() {
+  const [screenIndex, setScreenIndex] = useState(0);
+  const data = OnBoardingSteps[screenIndex];
+  const onContinue = () => {
+    const lastScreen = screenIndex == OnBoardingSteps.length - 1;
+    if (lastScreen) {
+      lastScren();
+    } else {
+      setScreenIndex(screenIndex + 1);
+    }
+  };
+  const lastScren = () => {
+    setScreenIndex(0), router.back();
+  };
   return (
     <SafeAreaView style={styles.page}>
       <View style={styles.content}>
         <Stack.Screen options={{ headerShown: false }} />
         <FontAwesome5
           style={styles.image}
-          name="people-arrows"
+          name={data.icons}
           size={100}
           color="#cef202"
         />
 
         <View style={styles.footer}>
-          <Text style={styles.title}>Track every transaction</Text>
-          <Text style={styles.description}>
-            Monitor your spending in the daily and make sure you optimize your
-            finance
-          </Text>
+          <Text style={styles.title}>{data.title}</Text>
+          <Text style={styles.description}>{data.description}</Text>
           <View style={styles.buttonRow}>
             <Text style={styles.buttonText}>Skip</Text>
-            <Link href={"day2/onboarding2"} asChild>
-              <Pressable style={styles.button}>
-                <Text style={styles.buttonText}>Continue</Text>
-              </Pressable>
-            </Link>
+            <Pressable onPress={onContinue} style={styles.button}>
+              <Text style={styles.buttonText}>Continue</Text>
+            </Pressable>
           </View>
         </View>
       </View>
