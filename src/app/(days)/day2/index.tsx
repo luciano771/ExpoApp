@@ -1,11 +1,19 @@
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
+import { Link, Stack } from "expo-router";
 
-const index = () => {
+const Index = () => {
   return (
     <View>
-      <Text>Day 2</Text>
+      <Stack.Screen options={{ title: "Day 2: Onboarding" }}></Stack.Screen>
+      <Text style={{ fontFamily: "AmaticSC_700Bold", fontSize: 50 }}>
+        Day Details Screen
+      </Text>
+
+      <Link href={"/day2/onboarding"} asChild>
+        <Button title="Go To Onboarding" />
+      </Link>
     </View>
   );
 };
 
-export default index;
+export default Index;

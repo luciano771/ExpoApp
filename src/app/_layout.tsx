@@ -1,6 +1,11 @@
 import { Stack } from "expo-router";
 import { useEffect } from "react";
-import { Inter_900Black, useFonts } from "@expo-google-fonts/inter";
+import {
+  Inter_400Regular,
+  Inter_700Bold,
+  Inter_900Black,
+  useFonts,
+} from "@expo-google-fonts/inter";
 import { AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
 
 import Entypo from "@expo/vector-icons/Entypo";
@@ -12,6 +17,8 @@ export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({
     Inter_900Black,
     AmaticSC_700Bold,
+    Inter_400Regular,
+    Inter_700Bold,
   });
 
   useEffect(() => {
