@@ -10,6 +10,10 @@ import { AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
 
 import Entypo from "@expo/vector-icons/Entypo";
 import * as SplashScreen from "expo-splash-screen";
+import {
+  GestureDetector,
+  GestureHandlerRootView,
+} from "react-native-gesture-handler";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -32,13 +36,18 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        title: "ExpoApp",
-        headerStyle: { backgroundColor: "#F9EDE3" },
-      }}
-    >
-      <Stack.Screen name="index" options={{ title: "ExpoApp" }}></Stack.Screen>
-    </Stack>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack
+        screenOptions={{
+          title: "ExpoApp",
+          headerStyle: { backgroundColor: "#F9EDE3" },
+        }}
+      >
+        <Stack.Screen
+          name="index"
+          options={{ title: "ExpoApp" }}
+        ></Stack.Screen>
+      </Stack>
+    </GestureHandlerRootView>
   );
 }

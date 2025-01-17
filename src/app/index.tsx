@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 
-  content: { gap: 20, padding: 10 },
+  content: { gap: 10, padding: 10 },
   column: { gap: 10 },
 });
